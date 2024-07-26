@@ -9,8 +9,8 @@ app2.config['SECRET_KEY'] = 'kalyan'
 app2.config['MAIL_PORT'] = 587
 app2.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app2.config['MAIL_USE_TLS'] = True
-app2.config['MAIL_USERNAME'] = 'darklord8722@gmail.com'
-app2.config['MAIL_PASSWORD'] = 'sgqb sito bggh ynxv'
+app2.config['MAIL_USERNAME'] = 'your mail'
+app2.config['MAIL_PASSWORD'] = 'password'
 mail = Mail(app2)
 
 class EmailForm(FlaskForm):
