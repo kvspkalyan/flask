@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Send Email</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style1.css')}}" >     
+</head>
+<body>
+    <h1><b><i>E-mail</i></b></h1>
+    <form method="POST" action="/send_email">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.email.label }}<br>
+            {{ form.email(size=32) }}<br>
+            {{ form.subject.label }}<br>
+            {{ form.subject(size=32) }}<br>
+            {{ form.message.label}}<br>
+            {{ form.message(class_="message-textarea",rows=10,cols=64)}}<br>
+            {{ form.submit() }}
+        </p>
+    </form>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+</body>
+</html>
