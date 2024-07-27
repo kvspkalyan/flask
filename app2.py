@@ -22,7 +22,7 @@ class EmailForm(FlaskForm):
 @app2.route('/')
 def index():
     form = EmailForm()
-    return render_template('index2.html', form=form)
+    return render_template('index.html', form=form)
 
 @app2.route('/send_email', methods=['POST'])
 def send_mail():
